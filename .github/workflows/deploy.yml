@@ -31,17 +31,16 @@ jobs:
         aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
         aws-region: ${{ secrets.AWS_REGION }}
 
-    - name: Desplegar en EC2 Web vía SSM
-      run: |
-        aws ssm send-command \
-          --instance-ids ${{ secrets.EC2_WEB_INSTANCE_ID }} \
-          --document-name "AWS-RunShellScript" \
-          --parameters '{"commands":[
-            "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/smartlogix-frontend:latest",
-            "docker stop smartlogix-frontend || true",
-            "docker rm smartlogix-frontend || true",
-            "docker run -d --name smartlogix-frontend -p 80:80 --restart always ${{ secrets.DOCKERHUB_USERNAME }}/smartlogix-frontend:latest"
-          ]}' \
-          --output text
+    - name: Desplegar en EC2 Web vía SSH
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.EC2_WEB_HOST }}
+        username: ${{ secrets.EC2_WEB_USER }}
+        key: ${{ secrets.EC2_WEB_SSH_KEY }}
+        script: |
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/smartlogix-frontend:latest
+          docker stop smartlogix-frontend || true
+          docker rm smartlogix-frontend || true
+          docker run -d --name smartlogix-frontend -p 80:80 --restart always ${{ secrets.DOCKERHUB_USERNAME }}/smartlogix-frontend:latest
 #hola
 #hola
