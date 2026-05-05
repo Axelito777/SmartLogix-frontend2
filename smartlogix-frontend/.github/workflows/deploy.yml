@@ -43,3 +43,4 @@ jobs:
             "docker run -d --name smartlogix-frontend -p 80:80 --restart always ${{ secrets.DOCKERHUB_USERNAME }}/smartlogix-frontend:latest"
           ]}' \
           --output text
+#hola
