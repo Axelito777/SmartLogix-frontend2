@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Sidebar from '../../components/Sidebar'
 
-const API = 'http://localhost:8080'
+const API = 'import.meta.env.VITE_API_URL'
 
 function Pedidos() {
   const [pedidos, setPedidos] = useState([])

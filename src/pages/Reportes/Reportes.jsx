@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Sidebar from '../../components/Sidebar'
 
-const API = 'http://localhost:8080'
+const API = 'import.meta.env.VITE_API_URL'
 
 const card = { background: '#1e2d42', border: '1px solid rgba(0,200,255,0.15)', borderRadius: '12px', overflow: 'hidden' }
 

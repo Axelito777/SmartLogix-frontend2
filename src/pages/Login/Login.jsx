@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const API = 'http://localhost:8080'
+const API = 'import.meta.env.VITE_API_URL'
 
 function Login() {
   const [email, setEmail] = useState('')

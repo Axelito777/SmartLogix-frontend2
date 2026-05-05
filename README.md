@@ -23,7 +23,7 @@ npm install
 
 ## Configuración
 
-El frontend se conecta al Gateway en `http://localhost:8080`. Asegúrate de tener el backend corriendo antes de iniciar el frontend.
+El frontend se conecta al Gateway en `import.meta.env.VITE_API_URL`. Asegúrate de tener el backend corriendo antes de iniciar el frontend.
 
 Para levantar el backend:
 ```bash
