@@ -20,6 +20,7 @@ jobs:
 
     - name: Build y Push imagen Frontend
       run: |
+        cd smartlogix-frontend
         docker build --no-cache -t ${{ secrets.DOCKERHUB_USERNAME }}/smartlogix-frontend:latest .
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/smartlogix-frontend:latest
 
