@@ -2,7 +2,7 @@ name: CI/CD SmartLogix Frontend
 
 on:
   push:
-    branches: [ "deploy" ]
+    branches: [ "deploy2" ]
 
 jobs:
   build-and-deploy:
