@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Sidebar from '../../components/Sidebar'
 
-const API = 'import.meta.env.VITE_API_URL'
+const API = import.meta.env.VITE_API_URL
 
 const glassCard = {
   background: '#1e2d42',
