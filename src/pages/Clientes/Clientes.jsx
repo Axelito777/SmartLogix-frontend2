@@ -9,6 +9,7 @@ const th = { textAlign: 'left', padding: '12px 16px', color: 'rgba(150,220,255,0
 const td = { padding: '12px 16px', color: 'rgba(200,240,255,0.9)', borderBottom: '1px solid rgba(0,200,255,0.06)' }
 const input = { padding: '9px 12px', background: 'rgba(0,150,220,0.15)', border: '1px solid rgba(0,200,255,0.25)', borderRadius: '8px', fontSize: '13px', color: '#fff', outline: 'none', width: '100%', boxSizing: 'border-box' }
 
+//hola
 function Clientes() {
   const [clientes, setClientes] = useState([])
   const [editando, setEditando] = useState(null)
