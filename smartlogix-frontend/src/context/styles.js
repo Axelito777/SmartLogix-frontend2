@@ -1,93 +1,101 @@
 export const pageStyle = {
   display: 'flex',
-  height: '100vh',
-  background: 'linear-gradient(135deg, #1a6b9a 0%, #2eb8c8 30%, #4dd9a0 60%, #7ef0b8 100%)',
-  overflow: 'hidden'
+  flexDirection: 'column',
+  minHeight: '100vh',
 }
 
 export const contentStyle = {
   flex: 1,
-  padding: '2rem',
+  padding: '2rem 2.5rem',
   boxSizing: 'border-box',
-  overflowY: 'auto'
+  overflowY: 'auto',
 }
 
 export const glassCard = {
-  background: 'linear-gradient(135deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.15) 100%)',
-  border: '1px solid rgba(255,255,255,0.4)',
-  borderRadius: '16px',
+  background: 'rgba(255,255,255,0.04)',
+  border: '1px solid rgba(255,255,255,0.08)',
+  borderRadius: '10px',
   padding: '1.5rem',
-  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.5)'
+  backdropFilter: 'blur(12px)',
+  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05)',
+}
+
+export const card = {
+  background: 'rgba(255,255,255,0.04)',
+  border: '1px solid rgba(255,255,255,0.08)',
+  borderRadius: '10px',
+  overflow: 'hidden',
+  backdropFilter: 'blur(12px)',
 }
 
 export const inputStyle = {
   padding: '10px 14px',
-  background: 'rgba(255,255,255,0.3)',
-  border: '1px solid rgba(255,255,255,0.5)',
-  borderRadius: '10px',
-  fontSize: '14px',
-  color: '#fff',
+  background: 'rgba(124,58,237,0.1)',
+  border: '1px solid rgba(124,58,237,0.25)',
+  borderRadius: '6px',
+  fontSize: '13px',
+  color: '#e2e8f0',
   outline: 'none',
   width: '100%',
-  boxSizing: 'border-box'
+  boxSizing: 'border-box',
 }
 
 export const btnPrimary = {
-  padding: '10px 20px',
-  background: 'linear-gradient(135deg, rgba(0,160,220,0.8), rgba(0,100,180,0.9))',
-  border: '1px solid rgba(255,255,255,0.4)',
-  borderRadius: '10px',
-  color: '#fff',
-  fontSize: '14px',
+  padding: '9px 20px',
+  background: 'linear-gradient(135deg, rgba(124,58,237,0.5), rgba(6,182,212,0.35))',
+  border: '1px solid rgba(124,58,237,0.4)',
+  borderRadius: '6px',
+  color: '#e2e8f0',
+  fontSize: '13px',
   fontWeight: '600',
   cursor: 'pointer',
-  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.3)'
 }
 
 export const btnDanger = {
   padding: '6px 12px',
-  background: 'rgba(255,80,80,0.3)',
-  border: '1px solid rgba(255,120,120,0.4)',
-  borderRadius: '8px',
-  color: '#ffbbbb',
+  background: 'rgba(239,68,68,0.15)',
+  border: '1px solid rgba(239,68,68,0.3)',
+  borderRadius: '6px',
+  color: '#ef4444',
   fontSize: '12px',
-  cursor: 'pointer'
+  cursor: 'pointer',
 }
 
 export const btnSecondary = {
-  padding: '6px 12px',
-  background: 'rgba(255,255,255,0.2)',
-  border: '1px solid rgba(255,255,255,0.4)',
-  borderRadius: '8px',
-  color: '#fff',
-  fontSize: '12px',
-  cursor: 'pointer'
+  padding: '9px 20px',
+  background: 'rgba(255,255,255,0.07)',
+  border: '1px solid rgba(255,255,255,0.12)',
+  borderRadius: '6px',
+  color: 'rgba(200,220,255,0.8)',
+  fontSize: '13px',
+  cursor: 'pointer',
 }
 
 export const thStyle = {
   textAlign: 'left',
-  padding: '12px 16px',
-  color: 'rgba(255,255,255,0.6)',
+  padding: '12px 18px',
+  color: 'rgba(200,220,255,0.4)',
   fontWeight: '500',
-  borderBottom: '1px solid rgba(255,255,255,0.2)'
+  fontSize: '12px',
+  borderBottom: '1px solid rgba(255,255,255,0.08)',
 }
 
 export const tdStyle = {
-  padding: '12px 16px',
-  color: '#fff',
-  borderBottom: '1px solid rgba(255,255,255,0.1)'
+  padding: '13px 18px',
+  color: 'rgba(200,220,255,0.85)',
+  borderBottom: '1px solid rgba(255,255,255,0.05)',
+  fontSize: '13px',
 }
 
 export const titleStyle = {
   fontSize: '22px',
   fontWeight: '700',
-  color: '#fff',
-  margin: '0 0 0.25rem',
-  textShadow: '0 1px 4px rgba(0,80,150,0.4)'
+  color: '#e2e8f0',
+  margin: '0 0 4px',
 }
 
 export const subtitleStyle = {
   fontSize: '13px',
-  color: 'rgba(255,255,255,0.75)',
-  margin: '0 0 1.5rem'
+  color: 'rgba(200,220,255,0.42)',
+  margin: '0 0 1.75rem',
 }

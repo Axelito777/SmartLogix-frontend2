@@ -19,51 +19,80 @@ function Login() {
       const res = await axios.post(`${API}/api/auth/login`, { email, password })
       localStorage.setItem('token', res.data.token)
       navigate('/dashboard')
-    } catch (err) {
+    } catch {
       setError('Correo o contraseña incorrectos')
     }
   }
 
-  return (
-    <div style={{
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #0a1628 0%, #0d2d4a 30%, #0a3d3a 60%, #0d2d1e 100%)',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '2rem',
-      position: 'relative',
-      overflow: 'hidden'
-    }}>
-      <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(0,180,220,0.15) 0%, transparent 70%)', borderRadius: '50%' }} />
-      <div style={{ position: 'absolute', bottom: '-60px', left: '-60px', width: '250px', height: '250px', background: 'radial-gradient(circle, rgba(0,220,150,0.1) 0%, transparent 70%)', borderRadius: '50%' }} />
+  const inputStyle = {
+    width: '100%',
+    padding: '12px 16px',
+    background: 'rgba(124,58,237,0.1)',
+    border: '1px solid rgba(124,58,237,0.25)',
+    borderRadius: '6px',
+    fontSize: '14px',
+    color: '#e2e8f0',
+    outline: 'none',
+    boxSizing: 'border-box',
+  }
 
-      <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        <div style={{ display: 'inline-block', background: 'linear-gradient(135deg, rgba(0,180,220,0.3), rgba(0,100,180,0.2))', border: '1px solid rgba(0,200,255,0.4)', borderRadius: '16px', padding: '8px 24px', marginBottom: '0.5rem' }}>
-          <span style={{ color: '#7ef0ff', fontSize: '22px', fontWeight: '700', letterSpacing: '0.15em', textShadow: '0 0 20px rgba(0,200,255,0.5)' }}>SMARTLOGIX</span>
+  return (
+    <div
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '2.5rem',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      {/* Glow orbs */}
+      <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 70%)', borderRadius: '50%', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', bottom: '-60px', left: '-60px', width: '250px', height: '250px', background: 'radial-gradient(circle, rgba(6,182,212,0.12) 0%, transparent 70%)', borderRadius: '50%', pointerEvents: 'none' }} />
+
+      {/* Logo */}
+      <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+        <div
+          style={{
+            display: 'inline-block',
+            background: 'linear-gradient(135deg, rgba(124,58,237,0.3), rgba(6,182,212,0.2))',
+            border: '1px solid rgba(124,58,237,0.45)',
+            borderRadius: '8px',
+            padding: '10px 28px',
+            marginBottom: '0.75rem',
+          }}
+        >
+          <span style={{ color: '#06b6d4', fontSize: '22px', fontWeight: '800', letterSpacing: '0.12em', textShadow: '0 0 18px rgba(6,182,212,0.5)' }}>SMART</span>
+          <span style={{ color: '#7c3aed', fontSize: '22px', fontWeight: '800', letterSpacing: '0.12em', textShadow: '0 0 18px rgba(124,58,237,0.5)' }}>LOGIX</span>
         </div>
-        <p style={{ color: 'rgba(150,220,255,0.7)', fontSize: '13px', margin: 0 }}>Sistema de gestión logística</p>
+        <p style={{ color: 'rgba(200,220,255,0.45)', fontSize: '13px', margin: 0 }}>Sistema de gestión logística</p>
       </div>
 
-      <div style={{
-        width: '100%',
-        maxWidth: '380px',
-        background: 'linear-gradient(135deg, rgba(0,40,80,0.7) 0%, rgba(0,60,60,0.6) 100%)',
-        border: '1px solid rgba(0,200,255,0.25)',
-        borderRadius: '20px',
-        padding: '2rem',
-        boxShadow: '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(0,200,255,0.2)'
-      }}>
-        <h2 style={{ color: '#7ef0ff', fontSize: '15px', fontWeight: '600', letterSpacing: '0.1em', margin: '0 0 1.5rem', textAlign: 'center' }}>INICIO DE SESIÓN</h2>
+      {/* Card */}
+      <div
+        style={{
+          width: '100%',
+          maxWidth: '400px',
+          background: 'rgba(255,255,255,0.04)',
+          border: '1px solid rgba(255,255,255,0.08)',
+          borderRadius: '10px',
+          padding: '2.5rem',
+          backdropFilter: 'blur(16px)',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)',
+        }}
+      >
+        <h2 style={{ color: 'rgba(200,220,255,0.85)', fontSize: '14px', fontWeight: '600', letterSpacing: '0.08em', margin: '0 0 1.75rem', textAlign: 'center' }}>INICIO DE SESIÓN</h2>
 
-        <div style={{ marginBottom: '1rem' }}>
+        <div style={{ marginBottom: '14px' }}>
           <input
             type="email"
             placeholder="Correo electrónico"
             value={email}
             onChange={e => setEmail(e.target.value)}
-            style={{ width: '100%', padding: '12px 14px', background: 'rgba(0,150,220,0.15)', border: '1px solid rgba(0,200,255,0.3)', borderRadius: '10px', fontSize: '14px', color: '#fff', outline: 'none', boxSizing: 'border-box' }}
+            style={inputStyle}
           />
         </div>
 
@@ -73,15 +102,26 @@ function Login() {
             placeholder="Contraseña"
             value={password}
             onChange={e => setPassword(e.target.value)}
-            style={{ width: '100%', padding: '12px 14px', background: 'rgba(0,150,220,0.15)', border: '1px solid rgba(0,200,255,0.3)', borderRadius: '10px', fontSize: '14px', color: '#fff', outline: 'none', boxSizing: 'border-box' }}
+            style={inputStyle}
           />
         </div>
 
-        {error && <p style={{ color: '#ff9999', fontSize: '13px', margin: '0 0 1rem', textAlign: 'center' }}>{error}</p>}
+        {error && <p style={{ color: '#ef4444', fontSize: '13px', margin: '0 0 1rem', textAlign: 'center' }}>{error}</p>}
 
         <button
           onClick={handleLogin}
-          style={{ width: '100%', padding: '13px', background: 'linear-gradient(135deg, rgba(0,160,220,0.7), rgba(0,80,180,0.8))', border: '1px solid rgba(0,200,255,0.4)', borderRadius: '10px', color: '#7ef0ff', fontSize: '14px', fontWeight: '600', cursor: 'pointer', boxShadow: '0 4px 20px rgba(0,150,255,0.3)' }}
+          style={{
+            width: '100%',
+            padding: '13px',
+            background: 'linear-gradient(135deg, rgba(124,58,237,0.6), rgba(6,182,212,0.45))',
+            border: '1px solid rgba(124,58,237,0.45)',
+            borderRadius: '6px',
+            color: '#e2e8f0',
+            fontSize: '14px',
+            fontWeight: '600',
+            cursor: 'pointer',
+            boxShadow: '0 4px 20px rgba(124,58,237,0.3)',
+          }}
         >
           Ingresar
         </button>
