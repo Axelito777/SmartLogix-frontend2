@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import TopBar from '../../components/TopBar'
 
-const API = 'http://localhost:8080'
+const API = ''
 
 const DIAS = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom']
 const VENTAS_MOCK = [42, 67, 55, 89, 73, 94, 61]

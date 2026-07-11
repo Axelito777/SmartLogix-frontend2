@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import TopBar from '../../components/TopBar'
 
-const API = 'http://localhost:8080'
+const API = ''
 
 /* ── icons ── */
 const IconSearch = () => (

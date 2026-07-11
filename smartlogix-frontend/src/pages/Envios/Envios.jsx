@@ -4,7 +4,7 @@ import axios from 'axios'
 import TopBar from '../../components/TopBar'
 import { pageStyle, contentStyle, titleStyle, subtitleStyle } from '../../context/styles'
 
-const API = 'http://localhost:8080'
+const API = ''
 
 function Envios() {
   const [envios, setEnvios] = useState([])

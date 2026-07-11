@@ -102,7 +102,7 @@ describe('Clientes', () => {
 
     await waitFor(() => {
       expect(axios.put).toHaveBeenCalledWith(
-        'http://localhost:8080/api/clientes/1',
+        '/api/clientes/1',
         expect.objectContaining({ nombre: 'Juan Actualizado' }),
         expect.any(Object)
       )
